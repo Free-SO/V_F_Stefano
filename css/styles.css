@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@100;200;400&display=swap');
+
+/*font-family: 'Alef', sans-serif;
+font-family: 'Montez', cursive;*/
+
+/*@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Sacramento&display=swap');/*estilo fuggles y sacramento regurlar 400 de google fonts*/
+
+/* para fuggles:  - font-family: 'Fuggles', cursive;
+para Sacramento: - font-family: 'Sacramento', cursive;
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Pasamos la funcionalidad de mediaquery a mixins usando saas*/
+
+
+/*probamos a dar estilos a la caja de cookies por la política de cookies
+
+footer{
+    display: flex;
+    font-size: 5;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: left;
+    border-radius: 2rem;
+}
+
+.cajacookies{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px grey;
+    color: #000;
+    background: #fff;
+    border-radius: 20px;
+    width: 90%;
+}
+
+.cookies-button{
+    display: flex;
+    margin: 20px;
+    padding: 15px;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    color:#fff;
+    background:#000;
+}
+
+.cajacookies a{
+    display: flex;
+    color:00000;
+}
+*/
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 300%; /* 100% * número de imágenes en el slider */
+    transition: transform 0.8s ease-in-out;
+}
+
+.slider-item {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+
+
+.fa-solid.fa-scissors:hover{
+    color: blue;
+}
+
+
+.header{
+    z-index: 2;
+    font-family: 'Asap', sans-serif;
+    background-color:rgb(221,176,183);/*rgb(108,49,51)*/
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link{
+    color: black;
+    text-decoration: none;
+}
+
+body{
+    padding: 90px 20px 0px;
+}
+/*Estilo fondo IndexOriginal*/
+
+.slider{
+    overflow: hidden;
+}
+
+.galeria-fondo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;;
+}
+
+.gallery-fondo{
+    width: 100%;
+}
+
+
+/* el img logo es una prueba de estilos con la imagen*/
+
+.img-logo{
+    display: flex;
+    height: 150px;
+    width: 150px;
+    align-items: left;
+}
+
+/*el img logo de arriba es una prueba de erstilos con la imagen*/
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 13px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active{
+    background-color: white;
+    transition: 0.5s;
+}
+
+.nav-toggle{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+}
+
+/*img de seccion 3*/
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    );
+    gap:32px;
+}
+
+.products img{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+}
+
+/*img de seccion 4*/
+
+.precios{
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    );
+    gap:32px;
+}
+
+.precios img{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+}
+
+
+
+@media(max-width:768px){
+    .header{
+        height: 60px;
+        z-index: 2;
+    }
+
+    body{
+        padding: 70px;
+    }
+
+    .logo{
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+    
+    .nav-menu{
+        flex-direction: column;
+        margin-right: 20px;
+        background-color: rgb(221,176,183);
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        align-items: center;
+        padding: 20px 0;
+        height: calc(100%);/* la barra original viene con height: calc(100%-60px); */
+        overflow-y: auto;
+        left: 100%;
+        transition: 0.3s;
+    }
+    
+    .nav-menu-item{
+        line-height: 70px;
+    }
+    
+    .nav-menu-link:hover,
+    .nav-menu-link_active{
+        background:none;
+        color: black;
+    }
+    
+    .nav-toggle{
+        display: block;
+    }
+
+    .nav-menu_visible{
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:foucs-visible){
+        outline:none;
+    }
+}
